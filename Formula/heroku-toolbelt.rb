@@ -1,9 +1,9 @@
 class HerokuToolbelt < Formula
-  desc "Everything you need to get started with Heroku"
-  homepage "https://toolbelt.heroku.com/other"
-  url "https://s3.amazonaws.com/assets.heroku.com/heroku-client/heroku-client-3.42.50.tgz"
-  sha256 "5579dca73a0718f6f32993be19aa92d2c2f049e0d732de946a8ae556fe30ccdd"
-  head "https://github.com/heroku/heroku.git"
+  desc "CLI interface to the Heroku Platform"
+  homepage "https://toolbelt.heroku.com/"
+  url "https://cli-assets.heroku.com/dev/5.0.0-aa7ee7c/heroku-v5.0.0-aa7ee7c-darwin-amd64.tar.xz"
+  sha256 "5e8c29b6cdb3f73282a6faf834f18143a7bc9f58b57095b921bb5614c79d8486"
+  head "https://github.com/heroku/cli.git"
 
   bottle :unneeded
 
@@ -12,10 +12,6 @@ class HerokuToolbelt < Formula
 
   def install
     libexec.install Dir["*"]
-    # turn off autoupdates (off by default in HEAD)
-    if build.stable?
-      inreplace libexec/"bin/heroku", "Heroku::Updater.inject_libpath", "Heroku::Updater.disable(\"Use `brew upgrade heroku-toolbelt` to update\")"
-    end
     bin.write_exec_script libexec/"bin/heroku"
   end
 
