@@ -1,5 +1,5 @@
 class Heroku < Formula
-  desc "Everything you need to get started with Heroku"
+  desc "Command-line client for the cloud PaaS"
   homepage "https://cli.heroku.com"
   url "https://cli-assets.heroku.com/heroku-cli/channels/stable/heroku-cli-v6.11.3-7bdd26d-darwin-x64.tar.xz"
   version "6.11.3"
